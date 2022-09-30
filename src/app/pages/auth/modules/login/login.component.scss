@@ -48,7 +48,8 @@ $font-logo: "Comfortaa", cursive;
     flex-direction: column;
     justify-content: center;
     background-color: #fff;
-    min-height: 80vh;
+    height: 80vh;
+    padding: 20px;
     border-radius: 0 10px 10px 0;
     box-shadow: rgb(0 0 0 / 50%) 0px 10px 20px, rgb(0 0 0 / 50%) 0px 10px 20px;
 
@@ -57,7 +58,6 @@ $font-logo: "Comfortaa", cursive;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 50px;
 
       img{
         width: 40%;
@@ -68,6 +68,7 @@ $font-logo: "Comfortaa", cursive;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 20px;
 
         .titleBemVindo {
           margin-top: 10px;

@@ -30,26 +30,9 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   resetarSenha(email:any) {
-    this.utilService.setBtnDisabled(true);
+
     this.hideForm = !this.hideForm;
     this.isLoading = true;
-    this.authService.resetarSenha(email).subscribe(
-      (res) => {
-        this.alertService.success(
-          ' ',
-          `Email enviado com sucesso para ${email} !`,
-          'OK'
-        );
-        this.isLoading = false;
-        this.hideForm = !this.hideForm;
-        this.router.navigate(['/auth/login']);
-      },
-      (error) => {
-        this.alertService.error('', `'E-mail ${email} inválido!'`, 'ok');
-        this.isLoading = false;
-        this.hideForm = false;
-      }
-    );
   }
 
 

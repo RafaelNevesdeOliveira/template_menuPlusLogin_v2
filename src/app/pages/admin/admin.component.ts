@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
   }
 
   getCompany() {
-    this.company = this.utilService.decodePayloadJWT();
     console.log(this.company, 'COMPANY');
   }
 }

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       username: [
         '',
         [
-          Validators.required,
+          // Validators.required,
           Validators.maxLength(50),
           Validators.minLength(4),
         ],
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       password: [
         '',
         [
-          Validators.required,
+          // Validators.required,
           Validators.maxLength(15),
           Validators.minLength(4),
         ],
@@ -53,32 +53,7 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin() {
-    this.utilService.setBtnDisabled(true);
-    this.hideForm = !this.hideForm;
-    this.isLoading = true;
-    this.authService
-      .gerarToken(this.loginForm.value)
-      .pipe(delay(14800))
-      .subscribe(
-        (res: any) => {
-          const { token, usuario } = res;
-          localStorage.setItem('token', token);
-          localStorage.setItem('user', JSON.stringify(usuario));
-
-          this.utilService.isAuthenticated();
-          this.router.navigate(['/admin']);
-          this.loginForm.reset();
-        },
-        (error) => {
-          this.router.navigate(['/']);
-          this.alertService.error("", "Usuário ou senha inválido(s)!", "ok");
-          this.isLoading = false;
-          this.hideForm = false;
-        },
-        () => {
-          this.isLoading = false;
-        }
-      );
+    this.router.navigate(['admin']);
   }
 
    // #region VALIDATION

@@ -38,30 +38,4 @@ export class UtilService {
     return false;
   }
 
-  decodePayloadJWT(): any {
-    try {
-      return jwt_decode(this.retornaToken());
-    } catch (Error) {
-      return null;
-    }
-  }
-
-  extrairDados(response: any) {
-    const data = response;
-    return data || {};
-  }
-
-  processarErros(erro: any) {
-    if (erro.status === 401) {
-      this.excluiToken
-      this.router.navigate(['/auth/login']);
-    }
-
-    return throwError(erro);
-  }
-
-  setBtnDisabled(param: boolean) {
-    this.btnDisabled.next(param);
-  }
-
 }
