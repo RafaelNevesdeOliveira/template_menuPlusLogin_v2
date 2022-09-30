@@ -1,0 +1,60 @@
+@import "../../../../styles.scss";
+.cardButton {
+  display: flex;
+  padding: 12px;
+  flex-direction: row;
+  justify-content: flex-end;
+  .newform-box {
+    background-color: #7979ea;
+    height: 40px;
+    border-radius: 40px;
+
+    label {
+      color: transparent;
+      width: 0;
+      padding: 0;
+      float: left;
+      border: none;
+      margin-top: 8px;
+      outline: none;
+      background: none;
+      font-size: 1.1rem;
+      transition: 0.5s ease;
+      cursor: pointer;
+    }
+
+    .icon {
+      color: $icon-color-newForm;
+      background-color: $buttons-border;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.4s;
+    }
+
+    .icon:hover {
+      transform: rotate(360deg) scale(0.8);
+    }
+  }
+
+  .newform-box:hover {
+    background-color: $button-new-form-background;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .newform-box:hover > label {
+    width: 150px;
+    padding: 0 10px;
+    color: $button-new-form-color-font;
+  }
+
+  .newform-box:hover > .icon {
+    background: #536179;
+  }
+}

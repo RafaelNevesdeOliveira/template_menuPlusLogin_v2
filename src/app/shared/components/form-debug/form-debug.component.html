@@ -1,0 +1,31 @@
+<p>
+  <button
+    class="btn btn-secondary my-4"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseExample"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    Apresentar validação de form - DEV
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div style="margin-top: 20px" *ngIf="form">
+      <div>Detalhes do form</div>
+
+      <pre class="debug">
+        Form válido: {{ form.valid }}
+      </pre>
+
+      <pre class="debug">
+        Form submetido: {{ form.submitted }}
+      </pre>
+
+      <pre class="debug">
+        Valores: <br> {{ form.value | json}}
+      </pre>
+    </div>
+  </div>
+</div>

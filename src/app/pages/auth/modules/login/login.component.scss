@@ -1,0 +1,247 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url("https://fonts.googleapis.com/css?family=Numans");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$top-menu: #14293a;
+$bg-atalho-breadcrum: #fafafa;
+$bg-dash: #f4f4f4;
+$verde-logo: #6b00ed;
+$violeta-logo: #4e7bf0;
+$buttons: #336e92;
+$font-logo: "Comfortaa", cursive;
+
+.container {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+
+  font-family: "Rubik", sans-serif;
+
+  background: linear-gradient(45deg, #1d2329, #343a3f);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-image: linear-gradient(to right, $verde-logo, $violeta-logo) 1;
+
+  .cardImage {
+    height: 80vh;
+    width: 35vw;
+    box-shadow: rgb(0 0 0 / 50%) 0px 10px 20px, rgb(0 0 0 / 50%) 0px 10px 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      opacity: 50%;
+      object-fit: cover;
+      border-radius: 10px 0 0 10px;
+    }
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    min-height: 80vh;
+    padding: 40px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: rgb(0 0 0 / 50%) 0px 10px 20px, rgb(0 0 0 / 50%) 0px 10px 20px;
+
+    .cardHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+
+      img{
+        width: 40%;
+      }
+
+      .topDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .titleBemVindo {
+          margin-top: 10px;
+          color: #343a3f;
+          font-size: 28px;
+        }
+
+        .textTop {
+          color: #343a3f;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .cardBody {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 100vw;
+
+      .inputUser,
+      .inputPassword {
+        padding-top: 10%;
+        display: flex;
+        width: 350px;
+        position: relative;
+
+        .icon {
+          padding: 10px;
+          background: #343a3f;
+          color: #dbdbdb;
+          min-width: 50px;
+          text-align: center;
+          border-radius: 4px 0 0 4px;
+        }
+        .formInput {
+          width: 300px;
+          border: 0.8px solid #c2c2c2;
+          border-radius: 0 4px 4px 0;
+          background: #fafafa;
+          padding: 10px;
+          font-size: 16px;
+          color: #343a3f;
+          outline: none;
+          transition: all 0.3s ease-in-out;
+          &:focus {
+            border: 1px solid #6b00ed;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        input {
+          background: #fff;
+        }
+
+        .validateInput {
+          color: rgb(253, 0, 0);
+          font-weight: 500;
+          width: 100%;
+        }
+
+        .iconEyes {
+          color: #5f5f5f;
+          font-size: 1.2rem;
+          margin-top: 8px;
+          position: absolute;
+          right: 0;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+      }
+
+      .input-group-prepend span {
+        width: 40px;
+        // background-color: black;
+        color: black;
+        border: 0 !important;
+
+        .bi-file-person-fill {
+          color: #fff !important;
+        }
+
+        .bi-key-fill {
+          color: #fff !important;
+        }
+      }
+
+      input:focus {
+        outline: 0 0 0 0 !important;
+        box-shadow: 0 0 0 0 !important;
+      }
+
+      .login {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+      }
+
+      .login_btn {
+        color: #fff;
+        background-color: $buttons;
+        width: 350px;
+      }
+
+      .login_btn:hover {
+        color: black;
+        background-color: $violeta-logo;
+        font-weight: 600;
+      }
+
+      .reset-password {
+        padding-top: 8px;
+
+        .reset-password__span {
+          border: none;
+          background-color: transparent;
+          font-size: 1.1rem;
+          letter-spacing: 1px;
+          color: #000000;
+          border-bottom: 1px solid #000000;
+        }
+
+        .reset-password__span:hover{
+          border-bottom: 1px solid #336e92;
+          border-bottom-width: 4px;
+          padding: 4px 0;
+          transition: 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVIDADE
+@media (max-width: 780px) {
+  .login_btn {
+    width: 100%;
+  }
+
+  .inputPassword,
+  .inputUser {
+    padding-top: 10%;
+    display: flex;
+    width: 100%;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .cardHeader h3 {
+    color: #fff;
+    box-shadow: 1px 2px 2px 2px black;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .topDescription {
+    display: flex;
+    flex-direction: column;
+
+    .titleBemVindo {
+      margin-top: 8px;
+      color: #eff2f7;
+      font-size: 18px;
+    }
+
+    .textTop {
+      color: #eff2f7;
+      font-size: 12px;
+    }
+  }
+}

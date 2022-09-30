@@ -1,0 +1,56 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="isExpanded">
+    <mat-nav-list>
+      <mat-list-item (click)="isExpanded = !isExpanded">
+        <mat-icon
+          mat-list-icon
+          class="chevron-button"
+          [ngClass]="{ rotated: isExpanded }"
+          >chevron_right
+        </mat-icon>
+      </mat-list-item>
+
+      <section class="wrapperMenuUser">
+        <div class="wrapperMenuUser__card" [routerLink]="'dashboard'">
+          <i class="bi bi-person-circle"></i>
+          <span *ngIf="isExpanded" class="menu-item">{{company.email}}</span>
+          <span *ngIf="isExpanded" class="menu-item">{{company.name}}</span>
+          <span *ngIf="isExpanded" class="menu-item-meus-dados">Meus dados</span>
+        </div>
+      </section>
+
+      <span class="c-divider u-mv-medium"></span>
+
+      <section class="wrapperMenuRoutes">
+        <mat-list-item [routerLink]="'dashboard'">
+          <mat-icon mat-list-icon class="menu-icon">home</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item"
+            >Gerenciamento de acessos</span
+          >
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'info'">
+          <mat-icon mat-list-icon class="menu-icon">important_devices</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">E-mails pendentes</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon class="menu-icon"
+            >supervisor_account</mat-icon
+          >
+          <span *ngIf="isExpanded" class="menu-item">Meus candidatos</span>
+        </mat-list-item>
+      </section>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <section class="wrapperHeader">
+      <div (click)="logout()" class="wrapperHeader__logout">
+        <mat-icon mat-list-icon class="wrapperHeader__logout__menu__icon">logout</mat-icon>
+        <input type="button" value="Logout" class="wrapperHeader__logout__menu__button">
+      </div>
+    </section>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

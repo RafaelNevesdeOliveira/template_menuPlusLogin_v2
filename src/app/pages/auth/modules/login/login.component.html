@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="cardImage">
+    <img src="assets/images/login.png" alt="" />
+  </div>
+  <div class="cardContent">
+    <div class="cardHeader">
+      <img src="assets/images/Proficiency test-new6523.svg" alt="">
+      <div class="topDescription" *ngIf="!hideForm">
+        <span class="titleBemVindo">Olá !</span>
+        <span class="textTop my-2"> Faça seu Login </span>
+      </div>
+    </div>
+
+    <div class="cardBody">
+      <div class="row">
+        <div class="col d-flex justify-content-center mt-4">
+          <app-spinner-loader *ngIf="isLoading" #loginLoader></app-spinner-loader>
+        </div>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()" *ngIf="!hideForm">
+        <div class="input-group form-group inputUser">
+          <i class="bi bi-person-fill icon"></i>
+          <input
+            type="text"
+            class="formInput"
+            placeholder="E-mail"
+            formControlName="username"
+          />
+          <ul
+            class="class-required validateInput"
+            *ngIf="validateInput('username')"
+          >
+            <li>E-mail inválido</li>
+          </ul>
+        </div>
+
+        <div class="input-group form-group inputPassword">
+          <i class="bi bi-lock-fill icon"></i>
+          <input
+            type="password"
+            class="formInput"
+            placeholder="Senha"
+            formControlName="password"
+            [type]="showInputPassword ? 'password' : 'text'"
+          />
+          <span
+            class="c-field__icon icon-eyes iconEyes"
+            (click)="showPassword()"
+          >
+            <i
+              class="bi bi-eye-fill"
+              [ngClass]="{
+                'bi-eye-slash': !showInputPassword,
+                'bi-eye-fill': showInputPassword
+              }"
+            ></i>
+          </span>
+          <ul
+            class="class-required validateInput"
+            *ngIf="validateInput('password')"
+          >
+            <li>Senha inválida, mínomo de 3 carácteres e máximo de 15</li>
+          </ul>
+        </div>
+
+        <div class="form-group login">
+          <button
+            (click)="fazerLogin()"
+            [disabled]="!loginForm.valid"
+            type="submit"
+            class="btn float-right login_btn"
+          >
+            Acessar
+          </button>
+        </div>
+        <div class="reset-password">
+          <input
+            class="reset-password__span"
+            (click)="resetPassword()"
+            type="button"
+            value="Esqueceu sua senha?"
+          />
+        </div>
+      </form>
+    </div>
+
+
+  </div>
+</div>

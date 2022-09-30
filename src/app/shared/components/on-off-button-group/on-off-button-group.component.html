@@ -1,0 +1,22 @@
+<div class="button-group">
+  <button
+    (focused)="activate(true)"
+    [class.button-pressed]="value === true"
+    (click)="activate(true)"
+    role="radio"
+    type="button"
+    class="button button-on"
+  >
+    ON
+  </button>
+  <button
+    (focused)="activate(false)"
+    [class.button-pressed]="value === false"
+    (click)="activate(false)"
+    role="radio"
+    type="button"
+    class="button button-off"
+  >
+    OFF
+  </button>
+</div>
