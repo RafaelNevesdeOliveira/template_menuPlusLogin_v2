@@ -11,15 +11,12 @@ export class GenericCrudServiceService {
 
   genericGetApiData<T>(apiUrl: string, options?: any): Observable<any> {
     return this.http.get<T>(apiUrl, options).pipe(
-      // tap((data) => console.log(data)),
-      pluck('data'),
       take(1),
     );
   }
 
   genericGetApiDataById<T>(apiUrl: string, options?: any): Observable<any> {
     return this.http.get<T>(apiUrl, options).pipe(
-      // tap((data) => console.log(data)),
       take(1),
     );
   }

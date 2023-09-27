@@ -4,9 +4,8 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { UtilService } from './util.service';
 
 @Injectable({

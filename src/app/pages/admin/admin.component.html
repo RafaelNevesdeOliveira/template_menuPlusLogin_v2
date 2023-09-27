@@ -1,7 +1,7 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="isExpanded">
     <mat-nav-list>
-      <mat-list-item (click)="isExpanded = !isExpanded">
+      <mat-list-item (click)="toggleSidenav()" >
         <mat-icon
           mat-list-icon
           class="chevron-button"
@@ -23,22 +23,22 @@
 
       <section class="wrapperMenuRoutes">
         <mat-list-item [routerLink]="'dashboard'">
-          <mat-icon mat-list-icon class="menu-icon">home</mat-icon>
-          <span *ngIf="isExpanded" class="menu-item"
+          <mat-icon  class="menu-icon">home</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item-link"
             >Home</span
           >
         </mat-list-item>
 
         <mat-list-item [routerLink]="'info'">
-          <mat-icon mat-list-icon class="menu-icon">important_devices</mat-icon>
-          <span *ngIf="isExpanded" class="menu-item">Lista1</span>
+          <mat-icon  class="menu-icon">important_devices</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item-link">Lista1</span>
         </mat-list-item>
 
         <mat-list-item [routerLink]="'user'">
-          <mat-icon mat-list-icon class="menu-icon"
+          <mat-icon  class="menu-icon"
             >supervisor_account</mat-icon
           >
-          <span *ngIf="isExpanded" class="menu-item">Lista 2</span>
+          <span *ngIf="isExpanded" class="menu-item-link">Lista 2</span>
         </mat-list-item>
       </section>
     </mat-nav-list>

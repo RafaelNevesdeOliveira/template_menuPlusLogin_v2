@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorHandler, Injectable, Injector, NgZone } from '@angular/core';
+import { ErrorHandler, Injectable, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { AlertService } from './alert.service';
 import { UtilService } from './util.service';
 
@@ -11,7 +10,6 @@ import { UtilService } from './util.service';
 export class ErrorHandlerService extends ErrorHandler {
   constructor(
     private zone: NgZone,
-    private injector: Injector,
     private utilService: UtilService,
     private alertService: AlertService,
     private router: Router
@@ -32,6 +30,10 @@ export class ErrorHandlerService extends ErrorHandler {
             this.router.navigate(['/auth/login']);
             this.utilService.excluiToken();
             break;
+            case 400:
+              this.alertService.info('Atenção', 'Usuário não tem avaliações disponiveis.', 'OK');
+
+              break;
           default:
             this.alertService.error(
               'Houve um problema',

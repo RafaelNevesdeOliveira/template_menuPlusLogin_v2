@@ -24,4 +24,7 @@ export class AdminComponent implements OnInit {
   getCompany() {
     console.log(this.company, 'COMPANY');
   }
+  toggleSidenav(){
+    this.isExpanded = !this.isExpanded;
+  }
 }
