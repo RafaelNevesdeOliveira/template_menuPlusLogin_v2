@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { AlertService } from 'src/app/shared/services/alert.service';
@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
+  public loginForm: UntypedFormGroup;
   public btnDisabled: boolean;
   public usuarioAutenticado: boolean = false;
   public isLoading: boolean = false;
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   public showInputPassword = true;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private authService: AuthService,
     private alertService: AlertService,
     private utilService: UtilService,

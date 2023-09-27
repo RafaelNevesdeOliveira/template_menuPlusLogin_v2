@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { delay } from 'rxjs/operators';
 import { AlertService } from 'src/app/shared/services/alert.service';
@@ -19,7 +19,7 @@ export class ResetPasswordComponent implements OnInit {
   public email?: any;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private authService: AuthService,
     private alertService: AlertService,
     private utilService: UtilService,
